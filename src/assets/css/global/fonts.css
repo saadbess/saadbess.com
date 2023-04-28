@@ -36,3 +36,13 @@
       format('woff2'),
     url(/assets/fonts/robotomono/robotomono-variablefont_wght-webfont.woff) format('woff');
 }
+
+@font-face {
+  font-family: 'Recoleta';
+  src: local('Recoleta Alt Black'), local('Recoleta-Alt-Black'),
+    url(/assets/fonts/recoletaaltblack/RecoletaAlt-Black.woff2) format('woff2'),
+    url(/assets/fonts/recoletaaltblack/RecoletaAlt-Black.woff) format('woff'),
+    url(/assets/fonts/recoletaaltblack/RecoletaAlt-Black.ttf) format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}

@@ -15,6 +15,14 @@ module.exports = {
     {
       text: 'Podcast',
       url: '/podcast/'
+    },
+    {
+      text: 'Newsletter',
+      url: '/newsletter/'
+    },
+    {
+      text: 'Contact',
+      url: '/contact/'
     }
   ],
   bottom: [

@@ -1,9 +1,9 @@
 .logo {
-  font-weight: bold;
-  text-transform: uppercase;
+  font-family: var(--font-display);
+  /* text-transform: uppercase; */
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  letter-spacing: -0.08rem;
+  letter-spacing: -0.01rem;
   padding: var(--space-xs) 0;
 }

@@ -2,6 +2,7 @@
   nav.navbar {
     --nav-button-display: none;
     --nav-position: static;
+    font-size: var(--size-step-0);
   }
 
   nav.navbar ul {

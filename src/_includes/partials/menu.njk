@@ -1,0 +1,62 @@
+<nav id="mainnav" class="navbar" aria-label="Main">
+  <ul>
+    {% for item in navigation.top %}
+      <li>
+        <a
+        class="nav"
+        href="{{ item.url }}"
+        {{
+        helpers.getLinkActiveState(item.url,
+        page.url)
+        |
+        safe
+        }}
+        >
+          {% if item.text === 'Home' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          {% endif %}
+          {% if item.text === 'About' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          {% endif %}
+          {% if item.text === 'Blog' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-text">
+              <path d="M17 6.1H3"></path>
+              <path d="M21 12.1H3"></path>
+              <path d="M15.1 18H3"></path>
+            </svg>
+          {% endif %}
+          {% if item.text === 'Podcast' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-podcast">
+              <circle cx="12" cy="11" r="1"></circle>
+              <path d="M11 17a1 1 0 0 1 2 0c0 .5-.34 3-.5 4.5a.5.5 0 0 1-1 0c-.16-1.5-.5-4-.5-4.5Z"></path>
+              <path d="M8 14a5 5 0 1 1 8 0"></path>
+              <path d="M17 18.5a9 9 0 1 0-10 0"></path>
+            </svg>
+          {% endif %}
+          {{ item.text }}</a
+      >
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<!--  template element holding a button that needs to be injected when JavaScript is finally available. based on an article by Manuel Matuzovic, https://web.dev/website-navigation/, see also https://kittygiraudel.com/2022/09/30/templating-in-html/ -->
+
+<template id="burger-template">
+  <button type="button" aria-expanded="false" aria-label="Menu" aria-controls="mainnav">
+    <span>Menu</span>
+    <svg width="24" height="24" aria-hidden="true">
+      <path
+        fill-rule="evenodd"
+        d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+        clip-rule="evenodd"
+/>
+    </svg>
+  </button>
+</template>

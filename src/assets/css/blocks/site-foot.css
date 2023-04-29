@@ -2,6 +2,7 @@
   padding: var(--space-s-m);
   background: var(--color-dark);
   color: var(--color-light);
+  font-family: var(--font-base);
 }
 
 .site-foot__inner {

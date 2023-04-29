@@ -18,6 +18,11 @@
       "value": ["Inter", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"]
     },
     {
+      "name": "Base Serif",
+      "description": "System fonts for body copy and globally set text.",
+      "value": ["Literata", "serif"]
+    },
+    {
       "name": "Mono",
       "description": "Expressive sections, like quotes",
       "value": ["RobotoMono", "monospace"]

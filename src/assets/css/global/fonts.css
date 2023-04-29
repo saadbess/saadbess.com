@@ -38,6 +38,24 @@
 }
 
 @font-face {
+  font-family: 'Literata';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local(''),
+    url(/assets/fonts/literata/Literata-Regular.ttf) format('truetype')
+}
+
+@font-face {
+  font-family: 'Literata';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local(''),
+    url(/assets/fonts/literata/Literata-Bold.ttf) format('truetype')
+}
+
+@font-face {
   font-family: 'Recoleta';
   src: local('Recoleta Alt Black'), local('Recoleta-Alt-Black'),
     url(/assets/fonts/recoletaaltblack/RecoletaAlt-Black.woff2) format('woff2'),

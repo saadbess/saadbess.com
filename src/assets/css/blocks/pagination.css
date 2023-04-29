@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination a {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border: 2px solid var(--color-dark);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+  position: relative;
+  transition: box-shadow .35s, top .3s, transform .45s;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  box-shadow: 0 1px 0 0 var(--color-dark), 0 2px 0 0 var(--color-dark), 0 3px 0 0 var(--color-dark);
+  transform: rotateX(0) rotateY(0) rotateZ(0);
+}
+
+.pagination a:hover {
+  box-shadow: 0 0 0 0 var(--color-dark), 0 0 0 0 var(--color-dark), 0 0 0 0 var(--color-dark);
+  top: 3px;
+  transform: rotateX(5deg) rotateY(10deg) rotateZ(.5deg);
+}
+
+.pagination a:last-child {
+  margin-left: auto;
+}

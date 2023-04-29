@@ -12,7 +12,8 @@ preloads:
   <div class="wrapper flow prose">
     <h1 class="gradient-text">{{ title }}</h1>
 
-    {% set definedDate = date %} {% include "partials/date.njk" %}
+    {% set definedDate = date %}
+    {% include "partials/date.njk" %}
 
     {{ content | safe }}
   </div>

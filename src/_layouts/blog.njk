@@ -1,8 +1,13 @@
 ---
 layout: base
+pagination:
+  data: collections.posts
+  size: 4
+  alias: posts
+tags: blog
 ---
 
-<header class="section spot-color-secondary">
+<header class="section spot-color-light-glare">
   <div class="section__inner region">
     <div class="wrapper flow">
       <section class="prose text-center">
@@ -11,21 +16,32 @@ layout: base
     </div>
   </div>
 
-  {% include 'svg/divider-edgy.svg' %}
+  {% include 'svg/divider-pixels.svg' %}
 </header>
 
 <article class="wrapper region">
   <ul class="grid mt-l-xl" role="list" data-rows="masonry" data-layout="50-50">
-    {% set postslist = collections.posts %} {% for post in postslist %}
+    {% for post in posts %}
 
-    <li class="card flow overflow-hidden">
-      <h2>
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-      </h2>
-      {% set definedDate = post.date %} {% include "partials/date.njk" %}
-      <p>{{ post.data.description }}</p>
-    </li>
+      <li class="card flow overflow-hidden">
+        <h2>
+          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+        </h2>
+        {% set definedDate = post.date %}
+        {% include "partials/date.njk" %}
+        <p>{{ post.data.description }}</p>
+      </li>
 
     {% endfor %}
   </ul>
+
+  <div class="pagination">
+    {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}">Newer Posts</a>
+    {% endif %}
+
+    {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}">Older Posts</a>
+    {% endif %}
+  </div>
 </article>

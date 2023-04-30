@@ -47,6 +47,7 @@ const {escape} = require('lodash');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language');
 const emojiReadTime = require('@11tyrocks/eleventy-plugin-emoji-readtime');
+const embedEverything = require('eleventy-plugin-embed-everything');
 
 module.exports = eleventyConfig => {
   // 	--------------------- Custom Watch Targets -----------------------
@@ -107,6 +108,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(inclusiveLangPlugin);
   eleventyConfig.addPlugin(emojiReadTime, {showEmoji: false});
+  eleventyConfig.addPlugin(embedEverything);
 
   // 	--------------------- Passthrough File Copy -----------------------
   // same path

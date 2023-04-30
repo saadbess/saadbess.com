@@ -1,0 +1,26 @@
+a.episode-link {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border: 2px solid var(--color-light);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+  position: relative;
+  transition: box-shadow .35s, top .3s, transform .45s;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  box-shadow: 0 1px 0 0 var(--color-light), 0 2px 0 0 var(--color-light), 0 3px 0 0 var(--color-light);
+  transform: rotateX(0) rotateY(0) rotateZ(0);
+  font-family: var(--font-base);
+}
+
+a.episode-link::after {
+  background-image: none !important;
+}
+
+a.episode-link:hover {
+  box-shadow: 0 0 0 0 var(--color-light), 0 0 0 0 var(--color-light), 0 0 0 0 var(--color-light);
+  top: 3px;
+  transform: rotateX(5deg) rotateY(10deg) rotateZ(.5deg);
+}

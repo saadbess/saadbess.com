@@ -58,8 +58,8 @@ blockquote > * + * {
 }
 
 blockquote :last-child {
-  font-family: var(--font-base);
-  font-style: normal;
+  font-family: var(--font-base-serif);
+  font-style: italic;
   font-size: var(--size-step-1);
 }
 

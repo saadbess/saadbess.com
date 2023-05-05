@@ -5,6 +5,8 @@ pagination:
   data: collections
   size: 1
   alias: tag
+  filter:
+    - posts
   addAllPagesToCollections: true
 eleventyComputed:
   title: Posts Tagged with {{ tag }}

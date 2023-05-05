@@ -81,6 +81,12 @@ module.exports = eleventyConfig => {
   eleventyConfig.addFilter('keys', Object.keys);
   eleventyConfig.addFilter('values', Object.values);
   eleventyConfig.addFilter('entries', Object.entries);
+  eleventyConfig.addFilter('exclude', (collection, stringToFilter) => {
+    if (!stringToFilter) {
+      return collection;
+    }
+    return (collection ?? []).filter(item => item !== stringToFilter);
+  });
 
   // 	--------------------- Custom shortcodes ---------------------
   eleventyConfig.addNunjucksAsyncShortcode('imagePlaceholder', imageShortcodePlaceholder);
@@ -108,7 +114,10 @@ module.exports = eleventyConfig => {
   eleventyConfig.setLibrary('md', markdownLib);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(inclusiveLangPlugin);
-  eleventyConfig.addPlugin(emojiReadTime, {showEmoji: false});
+  eleventyConfig.addPlugin(emojiReadTime, {
+    showEmoji: false,
+    label: 'mins to read'
+  });
   eleventyConfig.addPlugin(embedEverything);
   eleventyConfig.addPlugin(pluginWebc, {
     components: '_includes/webc/*.webc'

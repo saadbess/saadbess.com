@@ -15,15 +15,15 @@ preloads:
     {% set definedDate = date %}
     {% include "partials/date.njk" %}
 
-    <ul>
-      {% for tag in tags %}
-        <li>
+    <ul class="tags">
+      {% for tag in tags | exclude('posts') %}
+        <li class="button button__small">
           <a href="/blog/tag/{{ tag | slugify }}">{{ tag }}</a>
         </li>
       {% endfor %}
     </ul>
 
-    <p class="read-time">{{ content | emojiReadTime  }}</p>
+    <p class="read-time">Takes approximately <span>{{ content | emojiReadTime  }}</span></p>
 
     {{ content | safe  }}
   </div>

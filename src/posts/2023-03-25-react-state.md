@@ -6,6 +6,7 @@ tags:
   - React
   - JavaScript
   - Engineering Management
+  - State Management
 ---
 
 When you share your blog posts, a thumbnail image may appear - the image we define in our meta data as an Open Graph Image (`og:image`).

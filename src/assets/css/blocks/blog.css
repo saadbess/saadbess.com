@@ -20,4 +20,10 @@
   border-bottom: 0.8rem solid var(--color-dark);
   color: var(--color-dark);
   padding: 0 0 var(--space-s) 0;
+  font-size: var(--size-step-1);
+}
+
+.blog p.read-time span {
+  font-weight: 700;
+  margin-left: 0.3rem;
 }

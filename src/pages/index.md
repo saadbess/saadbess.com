@@ -5,13 +5,13 @@ description: 'Eleventy starter using modern CSS, fluid type, fluid spacing, flex
 layout: 'home'
 blog:
   title: 'Latest from the blog'
-  intro: "I'm showing the last 4 blog posts, but there might be more!"
+  intro: ''
 ---
 
-## An Eleventy starter
+## Hello there.
 
-This (opiniated) [Eleventy](https://www.11ty.dev/) starter is based on [Andy Bell's](https://mastodon.social/@andy@bell.bz) talk 'Be the browser’s mentor, not its micromanager' and it's companion website buildexcellentwebsit.es.
+I’m Saad, a front-end software engineer from London, England and this is my home on the web.
 
-In his words, it's about hinting the browser rather than micromanaging it, using progressive enhancement, CSS layout, fluid type & spacing, as well as modern CSS features.
+Combined with my design background, I build the web, focusing strongly on accessibility and performance. My recent obsessions are: static site generators like [Eleventy](https://www.11ty.dev/), [design systems](https://www.interaction-design.org/literature/topics/design-systems), [Next.js](https://nextjs.org/), and [micro-frontends](https://frontendmastery.com/posts/understanding-micro-frontends/).
 
-This way we can shape frontends that look good to everyone, regardless of device, connection speed or context.
+Learn more [about me](/about/), browse through the [blog](/blog/) or [buy me a :coffee:](https://ko-fi.com/saadbess).

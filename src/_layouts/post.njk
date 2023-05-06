@@ -26,5 +26,15 @@ preloads:
     <p class="read-time">Takes approximately <span>{{ content | emojiReadTime  }}</span></p>
 
     {{ content | safe  }}
+
+    {% set pageUrl = [page.url, rootURL] | join | urlencode %}
+    {% set stitle = title | urlencode %}
+
+    <p>
+      <a href="https://www.facebook.com/sharer.php?u={{ pageUrl }}">Facebook</a> ~
+      <a href="https://twitter.com/intent/tweet?url={{ pageUrl }}&text={{ stitle }}">Twitter</a> ~
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ pageUrl }}">LinkedIn</a> ~ 
+      <a href="https://reddit.com/submit?url={{pageUrl}}&title={{stitle}}">Reddit</a>
+    </p>
   </div>
 </article>

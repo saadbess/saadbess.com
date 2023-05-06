@@ -88,6 +88,8 @@ module.exports = eleventyConfig => {
     return (collection ?? []).filter(item => item !== stringToFilter);
   });
 
+  eleventyConfig.addGlobalData('rootURL', 'https://www.saadbess.com');
+
   // 	--------------------- Custom shortcodes ---------------------
   eleventyConfig.addNunjucksAsyncShortcode('imagePlaceholder', imageShortcodePlaceholder);
   eleventyConfig.addShortcode('youtube', liteYoutube);

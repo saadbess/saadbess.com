@@ -88,7 +88,10 @@ module.exports = eleventyConfig => {
     return (collection ?? []).filter(item => item !== stringToFilter);
   });
 
-  eleventyConfig.addGlobalData('rootURL', 'https://www.saadbess.com');
+  eleventyConfig.addGlobalData(
+    'rootURL',
+    'https://tubular-arithmetic-552208.netlify.app/'
+  );
 
   // 	--------------------- Custom shortcodes ---------------------
   eleventyConfig.addNunjucksAsyncShortcode('imagePlaceholder', imageShortcodePlaceholder);

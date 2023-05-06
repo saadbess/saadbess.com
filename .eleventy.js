@@ -90,7 +90,7 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addGlobalData(
     'rootURL',
-    'https://tubular-arithmetic-552208.netlify.app/'
+    'https://tubular-arithmetic-552208.netlify.app'
   );
 
   // 	--------------------- Custom shortcodes ---------------------

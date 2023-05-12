@@ -3,7 +3,7 @@ title: 'Hello, world!'
 description: 'I’ve been holding off from releasing this blog for a while now, man does it feel good finally writing this `Hello, world!` post.'
 date: 2023-05-05
 tags:
-  - Non-technical
+  - non-technical
 ---
 
 I’ve been holding off from releasing this blog for a while now, man does it feel good finally writing this `Hello, world!` post.

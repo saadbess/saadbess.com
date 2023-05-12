@@ -3,7 +3,7 @@ title: 'Beware of technical anxiety'
 description: 'Beware of technical anxiety. The only person who sets the expectation that you must know everything is you, and only you.'
 date: 2023-05-06
 tags:
-  - Non-technical
+  - non-technical
   - musing
   - anxiety
 ---

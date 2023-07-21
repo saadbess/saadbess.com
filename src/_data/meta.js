@@ -14,30 +14,30 @@ module.exports = {
   meta_data: {
     opengraph_default: '/assets/images/opengraph-default.jpg', // fallback/default meta image
     opengraph_default_alt:
-      'Visible content: Eleventy starter based on workflow for Cube CSS, Every Layout, Design Tokens and Tailwind for uitility, based on the concepts explained in buildexcellentwebsit.es ', // alt text for default meta image
+      'saadbess.com | Personal Web site of Saad Koubeissi', // alt text for default meta image
     twitterSite: '', // i.e. @site - twitter profile of the site
     twitterCreator: '', // i.e. @author -  twitter profile of the site
-    mastodonProfile: '' // i.e. https://front-end.social/@lene - url to your mastodon instance/profile
+    mastodonProfile: '' // i.e. https://front-end.social/@ - url to your mastodon instance/profile
   },
   blog: {
     // this is for the rss feed
-    name: 'My great Web Development Blog',
+    name: 'Personal Web site of Saad Koubeissi',
     description:
-      'Tell the word what you are writing about in your blog! It will show up on feed readers.'
+      'This blog artfully explores the intricacies of front-end web engineering alongside insightful discussions on engineering management and a myriad of other subjects.'
   },
   pagination: {
     itemsPerPage: 20
   },
   address: {
     // edit all presets or leave empty. They are being used in the pages for privacy.md and imprint.md
-    firma: 'Organization name',
-    street: '123 Main St.',
-    city: 'Ciudad',
-    state: 'Estado',
-    zip: '12345',
-    mobileDisplay: '+34 1234567',
-    mobileCall: ' +341234567',
-    email: 'hola@yoursite.com',
+    firma: '',
+    street: '',
+    city: '',
+    state: '',
+    zip: '',
+    mobileDisplay: '',
+    mobileCall: '',
+    email: 'hello@saadbess.com',
     cif: ''
   },
   menu: {

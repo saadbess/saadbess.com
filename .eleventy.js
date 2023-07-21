@@ -22,7 +22,8 @@ const {
   minifyCss,
   minifyJs,
   mdInline,
-  splitlines
+  splitlines,
+  truncateString
 } = require('./config/filters/index.js');
 
 // module import shortcodes
@@ -33,17 +34,17 @@ const {
 } = require('./config/shortcodes/index.js');
 
 // module import collections
-const {getAllPosts} = require('./config/collections/index.js');
+const { getAllPosts } = require('./config/collections/index.js');
 
 // module import events
-const {svgToJpeg} = require('./config/events/index.js');
+const { svgToJpeg } = require('./config/events/index.js');
 
 // plugins
 const markdownLib = require('./config/plugins/markdown.js');
-const {EleventyRenderPlugin} = require('@11ty/eleventy');
+const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const {slugifyString} = require('./config/utils');
-const {escape} = require('lodash');
+const { slugifyString } = require('./config/utils');
+const { escape } = require('lodash');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language');
 const emojiReadTime = require('@11tyrocks/eleventy-plugin-emoji-readtime');
@@ -79,6 +80,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksAsyncFilter('jsmin', minifyJs);
   eleventyConfig.addFilter('md', mdInline);
   eleventyConfig.addFilter('splitlines', splitlines);
+  eleventyConfig.addFilter('truncate', truncateString);
   eleventyConfig.addFilter('keys', Object.keys);
   eleventyConfig.addFilter('values', Object.values);
   eleventyConfig.addFilter('entries', Object.entries);

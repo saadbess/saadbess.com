@@ -3,7 +3,7 @@ const dayjs = require('dayjs');
 const CleanCSS = require('clean-css');
 const markdownLib = require('../plugins/markdown');
 const site = require('../../src/_data/meta');
-const {throwIfNotType} = require('../utils');
+const { throwIfNotType } = require('../utils');
 const md = require('markdown-it')();
 
 /** Returns the first `limit` elements of the the given array. */
@@ -121,6 +121,10 @@ const splitlines = (input, maxCharLength) => {
   return lines;
 };
 
+const truncateString = (str, count) => {
+  return str.length > count ? str.slice(0, count) + "..." : str;
+};
+
 module.exports = {
   limit,
   toHtml,
@@ -132,5 +136,6 @@ module.exports = {
   minifyCss,
   minifyJs,
   mdInline,
-  splitlines
+  splitlines,
+  truncateString
 };

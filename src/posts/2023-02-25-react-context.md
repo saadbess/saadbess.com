@@ -2,6 +2,7 @@
 title: 'React Context'
 description: 'When you share your blog posts, a thumbnail image appears - the image we define as an Open Graph Image. This starter generates these images for your blog posts automatically.'
 date: 2023-02-25
+draft: true
 ---
 
 When you share your blog posts, a thumbnail image may appear - the image we define in our meta data as an Open Graph Image (`og:image`).

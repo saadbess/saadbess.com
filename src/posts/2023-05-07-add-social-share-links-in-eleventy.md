@@ -2,6 +2,7 @@
 title: 'Add social share links in Eleventy'
 description: 'Learn how to add social share links to your Eleventy blog posts using minimal configuration and Nunjucks templating.'
 date: 2023-05-07
+draft: true
 tags:
   - eleventy
   - 11ty

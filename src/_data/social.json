@@ -5,11 +5,6 @@
     "icon": "github.svg"
   },
   {
-    "platform": "mastodon",
-    "url": "https://front-end.social/@lene",
-    "icon": "mastodon.svg"
-  },
-  {
     "platform": "ko-fi",
     "url": "https://ko-fi.com/saadbess",
     "icon": "kofi.svg"

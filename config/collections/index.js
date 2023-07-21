@@ -1,7 +1,8 @@
-/** Returns all blog posts as a collection. */
+/** Returns all blog posts as a collection, excluding drafts. */
 const getAllPosts = collection => {
   const projects = collection.getFilteredByGlob('./src/posts/*.md');
-  return projects.reverse();
+  const publishedProjects = projects.filter(item => !item.data.draft);
+  return publishedProjects.reverse();
 };
 
 module.exports = {

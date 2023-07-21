@@ -37,10 +37,17 @@ preloads:
 
     <hr>
     <h3>Share this post</h3>
-    <p>
+    {# <p>
       <a href="https://www.facebook.com/sharer.php?u={{ urlEncoded }}" target="_blank">Facebook</a> · 
       <a href="https://twitter.com/intent/tweet?url={{ urlEncoded }}&text={{ stitle }}" target="_blank">Twitter</a> · 
       <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlEncoded }}" target="_blank">LinkedIn</a>
-    </p>
+    </p> #}
+
+    {# Example blogpost.njk #}
+
+    <article>
+      {# Social Share Buttons #}
+      {% include "socialShare.njk" %}
+    </article>
   </div>
 </article>

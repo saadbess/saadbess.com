@@ -1,0 +1,15 @@
+{# socialShare.njk #}
+
+{% set pageUrl = [rootURL, page.url] | join %}
+{% set urlEncoded = pageUrl | urlencode %}
+{% set stitle = title | urlencode %}
+
+{# Twitter Share Button #}
+<a href="https://twitter.com/share?url={{ urlEncoded }}&text={{ stitle }}&via=YourTwitterHandle" target="_blank" rel="noopener noreferrer">Tweet</a>
+
+{# Facebook Share Button #}
+<a href="https://www.facebook.com/sharer.php?u={{ urlEncoded }}" target="_blank" rel="noopener noreferrer">Share on Facebook</a>
+
+{# LinkedIn Share Button #}
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlEncoded }}&title={{ stitle }}" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+

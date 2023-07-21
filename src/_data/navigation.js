@@ -20,10 +20,10 @@ module.exports = {
     //   text: 'Newsletter',
     //   url: '/newsletter/'
     // },
-    {
-      text: 'Contact',
-      url: '/contact/'
-    }
+    // {
+    //   text: 'Contact',
+    //   url: '/contact/'
+    // }
   ],
   bottom: [
     {

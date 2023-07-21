@@ -8,17 +8,17 @@ youtube: true
 
 Hi, I’m Saad—a front-end software engineer—from London, England. I have worked in the web industry for over a decade, and in that time, I have contributed to marketing agencies, startups and larger client-side organisations. To mention some: [eBay](https://www.ebay.com/), [Accenture](https://www.accenture.com/) (Accenture Interactive), [Feed Agency](https://feed.xyz/) (now DEPT®), [Fjord Agency](https://www.accenture.com/us-en/services/song/unlock-your-potential) (a part of Accenture Song), [Grassify](https://grassify.co.uk/), [Gumtree](https://www.gumtree.com/), [IAAF](https://worldathletics.org/) (World Athletics), [River Island](https://www.riverisland.com/), [StubHub](https://www.stubhub.com/), [The White Company](https://www.thewhitecompany.com/), [Virgin Active](https://www.virginactive.com/), [Wonderbly](https://www.wonderbly.com/) and [Zopa](https://www.zopa.com/).
 
-Over these years, I have worked on legacy projects, greenfield projects, larger monolithic applications and smaller website builds. Some of these contributions were done independently, and some were within larger squads containing various disciplines. Possessing a background in design, I thoroughly enjoy collaborating with product and UX designers and researchers. This allows me to adopt a more of a design engineer role, supplying a source of technical depth to these collaborations.
+Throughout the years, I have navigated legacy ventures, pioneered greenfield initiatives, and shaped both expansive monolithic applications and succinct website constructs. My contributions span from solo endeavors to collaborative engagements within diverse multidisciplinary teams. With a foundational background in design, I relish my synergies with product aficionados, UX designers, and researchers. This positions me as a design engineer (kinda), infusing a profound technical nuance into our collective pursuits.
 
-Primarily working on the front-end of the web, I do sometimes dab into the back-end too. I’m enthusiastic about the [Jamstack](https://jamstack.org/), site generators, accessibility and performance. The developer experience is important to me, so application structure, build tools and architecture are some areas I often work in—especially monorepos.
+While my primary craft lies in the realm of front-end web development, I occasionally venture into back-end territories. I hold a fervent passion for the [Jamstack](https://jamstack.org/), site generators, accessibility, and performance metrics. I value an optimal developer experience, thus gravitating towards application architecture, build tooling, and particularly the nuances of monorepos.
 
 ## Teaching and mentoring
 
-Besides creating software, I find satisfaction in teaching and mentoring. Not only is it one of my ways to learn new things effectively, but educating others provides me a lot of joy.
+In addition to software development, I derive immense pleasure from imparting knowledge and mentoring. Teaching not only fortifies my grasp of new concepts but also imbues me with profound joy.
 
-Previously, I’ve taught through various organisations. While Head of Coding at [Ignite Hubs](https://www.ignitehubs.org.uk/) (through Southwark Council) I built a bespoke curriculum teaching web development (HTML, CSS and JavaScript) to young learners on a weekly basis. Leading these teaching sessions, I also mentored other adults into becoming instructors too. Likewise, teaming up with a scrum team, I led the revamp of the organisation’s web app. I architected the project in Vue, Nuxt and Tailwind.
+In the past, I've channeled my instructional endeavors through multiple esteemed organizations. As the Head of Coding at [Ignite Hubs](https://www.ignitehubs.org.uk/), under the aegis of Southwark Council, I crafted a specialized curriculum elucidating web development (spanning HTML, CSS, and JavaScript) for budding enthusiasts. Orchestrating these educational sessions also afforded me the privilege to mentor fellow adults in their journey to becoming adept instructors. In a collaborative stride with a Scrum ensemble, I spearheaded the rejuvenation of the organization's web application, sculpting its architecture with Vue, Nuxt, and Tailwind.
 
-Through Ignite, I also served as a supervisor on [The Duke of Edinburgh’s Award (DofE)](https://www.dofe.org/), coaching young learners through Harvard’s prominent [computer science (CS50) course](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0). This was a biweekly event that helped students navigate the course material and solve the various problem sets.
+At Ignite, I further embraced the esteemed role of a supervisor for [The Duke of Edinburgh’s Award (DofE)](https://www.dofe.org/), guiding young learners through Harvard's illustrious [computer science (CS50) course](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0). This biweekly rendezvous was tailored to aid students in navigating the academic labyrinth, assisting them in deciphering intricate course material and unraveling multifaceted problem sets.
 
 ## Podcast
 
@@ -31,18 +31,3 @@ Please enquire below about any speaking gigs or workshops.
 ## Enquiries
 
 For all enquiries, please send me an email at hello@saadbess.com.
-
-<!-- Based on the [companion website](https://buildexcellentwebsit.es/) of Andy Bell's talk 'Be the browser’s mentor, not its micromanager'. It takes over a core functionality: Using Tailwind CSS to generate CSS variables based on design tokens.
-
-Like buildexcellentwebsit.es, this starter uses modern CSS, fluid type & space, flexible Layouts and Progressive Enhancement, wrapped in a basic template, ideal for personal websites and other small projects.
-
-The aim is to hopefully spread the use of this _excellent_ workflow. To work with it efficiently you should be familiar with [cube.fyi](https://cube.fyi/), [utopia.fyi](https://utopia.fyi/) and [every-layout.dev](https://every-layout.dev/).
-
-- Find out more on https://buildexcellentwebsit.es/.
-- Remix the original: https://glitch.com/edit/#!/remix/build-excellent-websites
-
-Edit your preferences (colors, fonts, fluid text sizes etc.) in `src/assets/design-tokens`.
-
-## Watch the talk
-
-{% youtube 'JqnMI1AXl6w', 'Andy Bell – Be the browser’s mentor, not its micromanager' %} -->

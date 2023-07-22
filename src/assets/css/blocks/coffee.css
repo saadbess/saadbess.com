@@ -19,4 +19,6 @@
 
 .coffee a {
     margin-left: 0 !important;
+    background-color: #FBAA19 !important;
+    color: var(--color-dark) !important;
 }

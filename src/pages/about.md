@@ -18,7 +18,8 @@ In addition to software development, I derive immense pleasure from imparting kn
 
 In the past, I've channeled my instructional endeavors through multiple esteemed organizations. As the Head of Coding at [Ignite Hubs](https://www.ignitehubs.org.uk/), under the aegis of Southwark Council, I crafted a specialized curriculum elucidating web development (spanning HTML, CSS, and JavaScript) for budding enthusiasts. Orchestrating these educational sessions also afforded me the privilege to mentor fellow adults in their journey to becoming adept instructors. In a collaborative stride with a Scrum ensemble, I spearheaded the rejuvenation of the organization's web application, sculpting its architecture with Vue, Nuxt, and Tailwind.
 
-At Ignite, I further embraced the esteemed role of a supervisor for [The Duke of Edinburgh’s Award (DofE)](https://www.dofe.org/), guiding young learners through Harvard's illustrious [computer science (CS50) course](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0). This biweekly rendezvous was tailored to aid students in navigating the academic labyrinth, assisting them in deciphering intricate course material and unraveling multifaceted problem sets.
+At Ignite, I further embraced the esteemed role of a supervisor for [The Duke of Edinburgh’s Award (DofE)](https://www.dofe.org/), guiding young learners through Harvard's illustrious [computer science (CS50) course](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0). This biweekly rendezvous was tailored to aid students in navigating the academic labyrinth, assisting them in deciphering intricate course material and unraveling multifaceted pr
+oblem sets.
 
 ## Podcast
 

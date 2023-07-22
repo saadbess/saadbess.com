@@ -6,7 +6,7 @@
 */
 body {
   color: var(--color-dark);
-  background: var(--color-light);
+  background: var(--color-white);
   font-size: var(--size-step-1);
   font-family: var(--font-base-serif);
   line-height: 1.6;
@@ -54,7 +54,7 @@ blockquote {
   font-size: var(--size-step-2);
 }
 
-blockquote > * + * {
+blockquote>*+* {
   margin-top: var(--space-m-l);
 }
 
@@ -109,7 +109,8 @@ article [href^='http']:not([href*='saadbess.com'])::after {
   content: '(external link)';
   overflow: hidden;
   white-space: nowrap;
-  text-indent: 1em; /* the width of the icon */
+  text-indent: 1em;
+  /* the width of the icon */
 }
 
 /* Base selection styles that invert whatever colours are rendered */

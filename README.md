@@ -1,2 +1,2 @@
 # saadbess.com
-Personal blog of Saad Koubeissi.
+The personal Web site of Saad Koubeissi — Engineering Manager and front-end software engineer – Saad Koubeissi, Engineering Manager and front-end software engineer.

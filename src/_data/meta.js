@@ -1,7 +1,7 @@
 module.exports = {
   url: process.env.URL || 'http://localhost:8080',
   siteName: 'Saad Koubeissi',
-  siteDescription: 'Personal Web site of Saad Koubeissi',
+  siteDescription: 'The personal Web site of Saad Koubeissi — Engineering Manager and front-end software engineer – Saad Koubeissi, Engineering Manager and front-end software engineer',
   siteType: 'Person', // schema
   locale: 'en_EN',
   lang: 'en',
@@ -14,14 +14,14 @@ module.exports = {
   meta_data: {
     opengraph_default: '/assets/images/opengraph-default.jpg', // fallback/default meta image
     opengraph_default_alt:
-      'saadbess.com | Personal Web site of Saad Koubeissi', // alt text for default meta image
+      'The personal Web site of Saad Koubeissi — Engineering Manager and front-end software engineer – Saad Koubeissi, Engineering Manager and front-end software engineer', // alt text for default meta image
     twitterSite: '', // i.e. @site - twitter profile of the site
     twitterCreator: '', // i.e. @author -  twitter profile of the site
     mastodonProfile: '' // i.e. https://front-end.social/@ - url to your mastodon instance/profile
   },
   blog: {
     // this is for the rss feed
-    name: 'Personal Web site of Saad Koubeissi',
+    name: 'The personal Web site of Saad Koubeissi — Engineering Manager and front-end software engineer – Saad Koubeissi, Engineering Manager and front-end software engineer',
     description:
       'This blog artfully explores the intricacies of front-end web engineering alongside insightful discussions on engineering management and a myriad of other subjects.'
   },

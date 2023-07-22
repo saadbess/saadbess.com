@@ -51,7 +51,7 @@ eleventyExcludeFromCollections: true
   >
     {% for line in titleInLines %}
     <tspan x="160" y="{{ verticalStartingPoint - 20 + loop.index0 * 80 }}">
-      {{ line | truncate(40) }}
+      {{ line }}
     </tspan>
     {% endfor %}
   </text>

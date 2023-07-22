@@ -9,7 +9,7 @@ module.exports = {
   author: 'Saad Koubeissi',
   authorEmail: 'hello@saadbess.com',
   authorWebsite: 'https://www.saadbess.com',
-  themeColor: '#DD4462', //  Manifest: defines the default theme color for the application
+  themeColor: '#3959e7', //  Manifest: defines the default theme color for the application
   themeBgColor: '#F3F3F3', // Manifest: defines a placeholder background color for the application page to display before its stylesheet is loaded
   meta_data: {
     opengraph_default: '/assets/images/opengraph-default.jpg', // fallback/default meta image

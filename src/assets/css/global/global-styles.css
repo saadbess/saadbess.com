@@ -64,6 +64,12 @@ blockquote :last-child {
   font-size: var(--size-step-1);
 }
 
+figcaption {
+  padding: var(--space-m-l);
+  font-size: var(--size-step-1);
+  font-style: italic;
+}
+
 svg {
   height: 2ex;
   width: auto;

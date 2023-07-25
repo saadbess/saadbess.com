@@ -1,5 +1,5 @@
 ---
-title: 'If everything is equally essential, nothing stands out as essential'
+title: 'If everything is equally essential, nothing is'
 description: "At a time when information and options abound, understanding what matters becomes ever more crucial. In this article we investigate over-prioritisation issues specifically within arenas where decisions need to be made quickly with close attention to details."
 date: 2023-07-25
 toc: true

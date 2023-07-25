@@ -6,7 +6,7 @@ toc: false
 tags:
   - musing
   - change yourself
-  - vue.js
+  - react
   - team morale
 ---
 
@@ -26,11 +26,11 @@ Come morning, at our standup, he unveiled the completed feature—meticulously d
 
 Later, as lunch time came, we descended to our frequented coffee shop nestled amidst the pulsating heart of Shoreditch, London. The exact name of this spot eludes me now, which seems almost an injustice given their exquisite flat whites.
 
-Intrigued, I asked, "How did you accomplish that in such a short amount of time?" He responded, a hint of wisdom in his voice, "Saad, occasionally, it pays to have optimism and invest trust in your peers. My strategy was to first construct it, then demonstrate its efficacy to advocate for the library's extended usage." It was in this revelatory moment that I was acquainted with Vue.js—a versatile JavaScript framework, adept at seamlessly integrating into even the minutest fragments of web projects. My colleague proceeded with a deeper elucidation. That afternoon saw us, rapt in attention, gathered around his monitor, observing the magic of reusable components, which in turn sidestepped redundancy and unwarranted code density.
+Intrigued, I asked, "How did you accomplish that in such a short amount of time?" He responded, a hint of wisdom in his voice, "Saad, occasionally, it pays to have optimism and invest trust in your peers. My strategy was to first construct it, then demonstrate its efficacy to advocate for the library's extended usage." It was in this revelatory moment that I was acquainted with React—a versatile JavaScript library, adept at seamlessly integrating into even the minutest fragments of web projects. My colleague proceeded with a deeper elucidation. That afternoon saw us, rapt in attention, gathered around his monitor, observing the magic of reusable components, which in turn sidestepped redundancy and unwarranted code density.
 
 What's compelling to note is that this colleague wasn't a team lead or an engineering manager. He was, in essence, a collaborative contributor. Yet, his personal endeavours in upskilling bore fruits that undeniably enriched his professional contributions.
 
-From that encounter, Vue seamlessly integrated itself into our technical ethos, leading the transformation and creation of many projects.
+From that encounter, React seamlessly integrated itself into our technical ethos, leading the transformation and creation of many projects.
 
 Reflecting back upon this crucial juncture in my professional development and relationships with colleagues, I recognise its profound effect. Instead of rigidly resisting his choice out of arrogance or pride, the tangible results caused me to reconsider it; his empirical evidence overpowered any feelings of inferiority I might harbour about his choices; hence I not only changed my approach by paying closer attention to technical discussions from others but also became an advocate for diverse viewpoints. My persistence would have only proved detrimental while his solution speeded up our timeline by one week earlier than if I had persisted in my resistance whereas his solution gave rise to one week early delivery.
 

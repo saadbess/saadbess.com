@@ -65,6 +65,9 @@
     <!-- defered js  -->
     <script type="module" src="/assets/scripts/app.js?{{ assetHash }}" defer></script>
 
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+
     <!-- everything else: meta tags, icons, open graph etc.  -->
     {% include "partials/meta-info.njk" %}
   </head>
@@ -91,5 +94,18 @@
       src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.min.js"
     ></script>
     {% endif %}
+
+    <!-- CMS: redirects to the admin when a user logs in -->
+    <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+    </script>
   </body>
 </html>

@@ -8,7 +8,7 @@ blog:
   intro: ''
 ---
 
-## Hello there.
+## Hello there
 
 I'm Saad, a front-end software engineer from London, England, and this is my digital sanctuary.
 

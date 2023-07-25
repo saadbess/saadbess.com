@@ -148,7 +148,7 @@ module.exports = eleventyConfig => {
   });
 
   // For Netlift CMS
-  eleventyConfig.addPassthroughCopy('dist/admin');
+  eleventyConfig.addPassthroughCopy('./src/admin');
 
   // 	--------------------- general config -----------------------
   return {

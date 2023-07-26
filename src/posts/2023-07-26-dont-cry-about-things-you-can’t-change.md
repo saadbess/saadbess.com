@@ -11,6 +11,8 @@ tags:
   - team morale
 ---
 
+Post ID: {{ postId }}
+
 > “Don’t cry about things you can’t change, change the things you can, change your pathways.”
 
 Throughout my professional career, numerous moments arose wherein certain facets left me disenchanted. These encompassed my own choices, responses to colleagues, or approaches to challenges that did not resonate with my perspective.

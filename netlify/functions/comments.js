@@ -1,8 +1,11 @@
 const { Octokit } = require('@octokit/rest');
 const { createTokenAuth } = require('@octokit/auth-token');
-const dayjs = require('dayjs');
 const md = require('markdown-it')();
 const sanitizeHtml = require('sanitize-html');
+
+const dayjs = require('dayjs');
+const relativeTime = require('dayjs/plugin/relativeTime');
+dayjs.extend(relativeTime);
 
 exports.handler = async (event) => {
 	const issueNumber = event.queryStringParameters.id;
@@ -25,7 +28,7 @@ exports.handler = async (event) => {
 		const response = await octokitClient.issues.listComments({
 			owner: 'saadbess',
 			repo: 'saadbess.com',
-			issue_number: 1,
+			issue_number: issueNumber,
 		});
 
 		// reshape the data as needed and return the comments from our lambda:
@@ -39,7 +42,7 @@ exports.handler = async (event) => {
 						avatarUrl: comment.user.avatar_url,
 						name: sanitizeHtml(comment.user.login),
 					},
-					datePosted: comment.created_at,
+					datePosted: dayjs(comment.created_at).fromNow(),
 					isEdited: comment.created_at !== comment.updated_at,
 					isAuthor: comment.author_association === 'OWNER',
 					body: sanitizeHtml(comment.body),

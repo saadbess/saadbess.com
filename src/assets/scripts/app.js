@@ -31,34 +31,6 @@ document.addEventListener('click', e => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const commentsContainers = document.querySelectorAll('.comments-container');
-
-  commentsContainers.forEach(container => {
-    const postId = container.dataset.postId;
-
-    fetch(`/.netlify/functions/comments?id=${postId}`)
-      .then(response => response.json())
-      .then(comments => {
-        if (comments && comments.length > 0) {
-          comments.forEach(comment => {
-            // Here, you create and append comment elements.
-            // For instance:
-            const commentDiv = document.createElement('div');
-            commentDiv.className = 'comment';
-            commentDiv.innerText = comment.body;
-            container.appendChild(commentDiv);
-          });
-        } else {
-          container.innerText = 'No comments yet. Be the first to comment!';
-        }
-      })
-      .catch(error => {
-        console.error("Failed fetching comments:", error);
-      });
-  });
-});
-
 nav.insertBefore(burgerClone, list);
 
 // ----- masonry fallback if CSS masonry not supported, solution by Ana Tudor: https://codepen.io/thebabydino/pen/yLYppjK
@@ -117,3 +89,99 @@ if (!supportMasonry) {
     );
   }
 }
+
+// Comments
+document.addEventListener("DOMContentLoaded", function () {
+  const commentsContainers = document.querySelectorAll('.comments-container');
+
+  // The callback for the IntersectionObserver
+  const loadComments = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        // main container
+        const container = entry.target;
+        const postId = container.getAttribute('data-postId');
+        console.log('Post ID:', postId);
+        fetch(`/.netlify/functions/comments?id=${postId}`)
+          .then(response => response.json())
+          .then(comments => {
+            if (comments.data && comments.data.length > 0) {
+
+              const btnContainer = document.createElement('div');
+              btnContainer.className = 'btn-container';
+
+              // create an element to show the number of existing comments
+              const numberOfComments = document.createElement('h3');
+              numberOfComments.className = 'number-of-comments'
+              numberOfComments.innerText = comments.data.length + ' Comments';
+
+              // create a button to allow users to submit a comment in GitHub
+              const commentLink = document.createElement('a');
+              commentLink.className = 'comment-btn';
+              commentLink.innerText = 'Comment on GitHub';
+              commentLink.href = `https://github.com/saadbess/saadbess.com/issues/${postId}`;
+              commentLink.target = '_blank';
+
+              btnContainer.appendChild(numberOfComments);
+              btnContainer.appendChild(commentLink);
+
+              container.appendChild(btnContainer);
+
+              comments.data.forEach(comment => {
+                const commentInfoContainer = document.createElement('div');
+                commentInfoContainer.className = 'info-container';
+                // grab the users avatar and name
+                const userAvatar = document.createElement('img');
+                userAvatar.src = comment.user.avatarUrl;
+                userAvatar.className = 'user-avatar';
+
+                const userName = document.createElement('span');
+                userName.className = 'user-name';
+                userName.innerText = comment.user.name
+
+                const date = document.createElement('time');
+                date.className = 'comment-time';
+                date.innerText = comment.datePosted;
+
+                if (comment.isAuthor) {
+                  const author = document.createElement('span');
+                  author.className = 'comment-author';
+                  author.innerText = 'Author';
+                  commentInfoContainer.appendChild(author);
+                }
+
+                const commentDiv = document.createElement('div');
+                commentDiv.classList.add('comment');
+                commentDiv.innerText = comment.body;
+
+                commentInfoContainer.appendChild(userAvatar);
+                commentInfoContainer.appendChild(userName);
+                commentInfoContainer.appendChild(date);
+                commentDiv.appendChild(commentInfoContainer);
+                container.appendChild(commentDiv);
+              });
+            } else {
+              container.innerText = 'No comments yet. Be the first to comment!';
+            }
+            // Stop observing once the comments are loaded
+            observer.unobserve(container);
+          })
+          .catch(error => {
+            console.error("Failed fetching comments:", error);
+          });
+      }
+    });
+  };
+
+  // Setting up the IntersectionObserver
+  const options = {
+    rootMargin: '0px',  // Adjust if you want to load earlier or later
+    threshold: 0.1  // Start fetching when 10% of the container is visible
+  };
+
+  const observer = new IntersectionObserver(loadComments, options);
+
+  // Observing all comments containers
+  commentsContainers.forEach(container => observer.observe(container));
+});

@@ -3,13 +3,6 @@
 	padding: var(--space-m-l) 0 0 0;
 }
 
-.btn-container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	font-family: var(--font-base);
-}
-
 .info-container {
 	display: flex;
 	align-items: flex-end;
@@ -17,6 +10,13 @@
 	/* background-color: var(--color-dark); */
 	border-radius: var(--border-radius);
 	margin: 0 0 var(--space-xs) 0;
+}
+
+.btn-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: var(--font-base);
 }
 
 .comment-btn {

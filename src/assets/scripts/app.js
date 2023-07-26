@@ -31,6 +31,34 @@ document.addEventListener('click', e => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const commentsContainers = document.querySelectorAll('.comments-container');
+
+  commentsContainers.forEach(container => {
+    const postId = container.dataset.postId;
+
+    fetch(`/.netlify/functions/comments?id=${postId}`)
+      .then(response => response.json())
+      .then(comments => {
+        if (comments && comments.length > 0) {
+          comments.forEach(comment => {
+            // Here, you create and append comment elements.
+            // For instance:
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerText = comment.body;
+            container.appendChild(commentDiv);
+          });
+        } else {
+          container.innerText = 'No comments yet. Be the first to comment!';
+        }
+      })
+      .catch(error => {
+        console.error("Failed fetching comments:", error);
+      });
+  });
+});
+
 nav.insertBefore(burgerClone, list);
 
 // ----- masonry fallback if CSS masonry not supported, solution by Ana Tudor: https://codepen.io/thebabydino/pen/yLYppjK
@@ -46,7 +74,7 @@ if (!supportMasonry) {
       gap: parseFloat(getComputedStyle(grid).gridRowGap),
       items: [...grid.childNodes]
         .filter(c => c.nodeType === 1 && +getComputedStyle(c).gridColumnEnd !== -1)
-        .map(c => ({_el: c})),
+        .map(c => ({ _el: c })),
       ncol: 0
     }));
 
@@ -67,8 +95,8 @@ if (!supportMasonry) {
           if (grid.ncol > 1) {
             grid.items.slice(ncol).forEach((c, i) => {
               let prev_fin =
-                  grid.items[i]._el.getBoundingClientRect()
-                    .bottom /* bottom edge of item above */,
+                grid.items[i]._el.getBoundingClientRect()
+                  .bottom /* bottom edge of item above */,
                 curr_ini =
                   c._el.getBoundingClientRect().top; /* top edge of current item */
 

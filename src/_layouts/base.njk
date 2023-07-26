@@ -65,7 +65,6 @@
     <!-- defered js  -->
     <script type="module" src="/assets/scripts/app.js?{{ assetHash }}" defer></script>
 
-
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 
     <!-- everything else: meta tags, icons, open graph etc.  -->
@@ -97,15 +96,19 @@
 
     <!-- CMS: redirects to the admin when a user logs in -->
     <script>
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", user => {
+      if (window.netlifyIdentity) {
+        window
+          .netlifyIdentity
+          .on("init", user => {
             if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
+              window
+                .netlifyIdentity
+                .on("login", () => {
+                  document.location.href = "/admin/";
+                });
             }
           });
-        }
+      }
     </script>
   </body>
 </html>

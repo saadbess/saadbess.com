@@ -3,6 +3,7 @@ title: 'Don’t cry about things you can’t change'
 description: "“Don’t cry about things you can’t change, change the things you can, change your pathways.”"
 date: 2023-07-26
 toc: false
+postId: 1
 tags:
   - musing
   - change yourself

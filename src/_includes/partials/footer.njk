@@ -3,12 +3,8 @@
 <footer class="site-foot" role="contentinfo">
   <div class="wrapper">
     <div class="site-foot__inner">
-      <nav id="footernav" class="site-foot__inner" aria-label="Footer">
-
-        &copy; {% year %}
-        <a href="/" {% if activePage === '/' %} aria-current="page" {% endif %}>{{ meta.siteName }}</a>
-
-        {# {% for item in navigation.bottom %}
+      {# <nav id="footernav" class="site-foot__inner" aria-label="Footer">
+        {% for item in navigation.bottom %}
 
           <a
           href="{{ item.url }}"
@@ -21,8 +17,8 @@
           >{{ item.text }}</a
         >
 
-        {% endfor %} #}
-      </nav>
+        {% endfor %}
+      </nav> #}
 
       <nav id="social" class="site-foot__inner" aria-label="Social links">
         {% for item in social %}
@@ -39,6 +35,13 @@
           {% endfor %}
 
         </nav>
+      </div>
+      <div class="site-foot__copyright">
+        <p>This Web site is built with <a href="https://www.11ty.dev/">Eleventy</a>, <a href="https://decapcms.org/" target="_blank">Decap CMS</a> and hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>.</p>
+
+        &copy; {% year %}
+        <a href="/" {% if activePage === '/' %} aria-current="page" {% endif %}>{{ meta.siteName }}
+        </a>. <strong>All rights reserved.</strong>
       </div>
     </div>
 

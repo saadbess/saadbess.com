@@ -13,6 +13,14 @@
   flex-wrap: wrap;
 }
 
+.site-foot__copyright {
+  text-align: center;
+
+  & p {
+    max-width: 100%;
+  }
+}
+
 .site-foot svg {
   height: 1em;
   width: 1em;

@@ -128,3 +128,7 @@ article [href^='http']:not([href*='saadbess.com'])::after {
 .preload-transitions * {
   transition: none !important;
 }
+
+.home-title {
+  color: white;
+}

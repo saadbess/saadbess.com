@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // main container
         const container = entry.target;
         const postId = container.getAttribute('data-postId');
-        console.log('Post ID:', postId);
         fetch(`/.netlify/functions/comments?id=${postId}`)
           .then(response => response.json())
           .then(comments => {

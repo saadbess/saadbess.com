@@ -1,7 +1,7 @@
 <a href="#main" class="skip-link">{{ meta.skipContent }}</a>
 
-<header class="wrapper | relative" role="banner">
-  <div class="site-head | ontop spot-color-primary">
+<header class="header wrapper | relative" role="banner">
+  <div class="site-head | ontop spot-color-white">
     {% set activePage = page.url | url %}
     <a href="/" class="logo site-head__brand | no-underline" {% if activePage === '/' %} aria-current="page" {% endif %}>
       {{ meta.siteName }}

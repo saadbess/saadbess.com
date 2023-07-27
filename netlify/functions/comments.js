@@ -3,6 +3,7 @@ const { createTokenAuth } = require('@octokit/auth-token');
 const sanitizeHtml = require('sanitize-html');
 const dayjs = require('dayjs');
 const relativeTime = require('dayjs/plugin/relativeTime');
+const md = require('markdown-it')();
 
 dayjs.extend(relativeTime);
 
@@ -37,7 +38,8 @@ async function fetchAndFormatComments(octokitClient, issueNumber) {
 			datePosted: dayjs(comment.created_at).fromNow(),
 			isEdited: comment.created_at !== comment.updated_at,
 			isAuthor: comment.author_association === 'OWNER',
-			body: sanitizeHtml(comment.body),
+			body: sanitizeHtml(md.render(comment.body)),
+			reactions: comment.reactions
 		}));
 }
 

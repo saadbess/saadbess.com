@@ -73,7 +73,9 @@
 
   <body>
     <!-- header -->
-    {% include "partials/header.njk" %}
+    <div class="header-main">
+      {% include "partials/header.njk" %}
+    </div>
 
     <!-- content slot -->
     <main id="main" class="flow">{{ content | safe }}</main>

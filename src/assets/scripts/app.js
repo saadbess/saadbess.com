@@ -151,14 +151,53 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 const commentDiv = document.createElement('div');
+                const safeHTML = comment.body;
                 commentDiv.classList.add('comment');
-                commentDiv.innerText = comment.body;
+                commentDiv.innerHTML = safeHTML
+
+                // Reverse the direct child elements of the container
+                const children = Array.from(commentDiv.children);
+                children.reverse().forEach(child => commentDiv.appendChild(child));
 
                 commentInfoContainer.appendChild(userAvatar);
                 commentInfoContainer.appendChild(userName);
                 commentInfoContainer.appendChild(date);
                 commentDiv.appendChild(commentInfoContainer);
                 container.appendChild(commentDiv);
+
+                if (comment.reactions) {
+                  const emojiMap = {
+                    "+1": "👍",
+                    "-1": "👎",
+                    "laugh": "😄",
+                    "hooray": "🎉",
+                    "confused": "😕",
+                    "heart": "❤️",
+                    "rocket": "🚀",
+                    "eyes": "👀"
+                  };
+
+                  function createReactionsElement(reactions) {
+                    const reactionsElement = document.createElement("div");
+                    reactionsElement.className = "reactions-container";
+
+                    Object.entries(reactions).forEach(([key, count]) => {
+                      if (count > 0 && emojiMap[key]) { // Ensure we have a matching emoji for the key
+                        const reactionSpan = document.createElement("span");
+                        reactionSpan.className = "reaction";
+                        reactionSpan.innerHTML = `${emojiMap[key]} ${count}`;
+                        reactionsElement.appendChild(reactionSpan);
+                      }
+                    });
+
+                    return reactionsElement;
+                  }
+
+                  const reactionsElem = createReactionsElement(comment.reactions);
+                  if (reactionsElem.hasChildNodes()) {
+                    commentDiv.appendChild(reactionsElem);
+                  }
+                }
               });
             } else {
               container.innerText = 'No comments yet. Be the first to comment!';

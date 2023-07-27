@@ -3,6 +3,7 @@ title: 'Part 2: Practical Steps - Balancing technical skills with interpersonal 
 description: "Let's delve into actionable strategies that a software engineer can embrace to enhance their interpersonal aptitudes and non-technical proficiencies."
 date: 2023-07-16
 toc: true
+postId: 4
 tags:
   - technical skills
   - interpersonal 

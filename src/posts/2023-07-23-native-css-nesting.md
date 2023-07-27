@@ -3,6 +3,7 @@ title: 'Native CSS Nesting'
 description: "CSS nesting bestows the elegance of embedding one style directive within another, where the child selector is inherently relative to its parent's selector. Such sophisticated functionality was once the exclusive domain of CSS pre-processors."
 date: 2023-07-23
 toc: true
+postId: 3
 tags:
   - technical
   - css

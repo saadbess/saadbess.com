@@ -3,6 +3,7 @@ title: 'Balancing technical skills with interpersonal abilities requires a delic
 description: 'Balancing technical skills with interpersonal skills can be a struggle for software engineers.'
 date: 2023-07-15
 toc: true
+postId: 5
 tags:
   - technical skills
   - interpersonal 
@@ -42,6 +43,7 @@ Finding balance can be a challenging feat; more like baking a soufflé than pie!
 Continuous learning, practical experience and determination are the foundations of becoming a balanced software engineer. Although this journey might require time and effort to complete successfully, its outcome makes the journey worthwhile. Finding balance in both technical and people skills can be like hitting the jackpot; it truly transforms careers.
 
 ## Optimism of the Future: Looking Ahead to Tomorrow
+
 As we look ahead, the software engineering landscape will continue to adapt quickly to changes caused by artificial intelligence (AI) and machine learning (ML). AI may alter what skills are necessary for being an engineer today - however don’t panic; future proofing your career by maintaining both technical abilities as well as people skills can protect it in its entirety.
 
 Finding harmony between technical abilities and people skills in software engineering is like discovering Grandma’s secret cookie recipe—it may take some experimentation and trial and error, but once done, it will provide immense satisfaction. After all, wouldn’t you like to become the star performer, expertly balancing technical prowess with people skills? Enjoy your journey achieving such balance; it will certainly be rewarding.

@@ -90,32 +90,62 @@ if (!supportMasonry) {
   }
 }
 
-// Comments
 document.addEventListener("DOMContentLoaded", function () {
   const commentsContainers = document.querySelectorAll('.comments-container');
 
-  // The callback for the IntersectionObserver
+  // Function to create reactions elements
+  function createReactionsElement(reactions) {
+    const reactionsElement = document.createElement("div");
+    reactionsElement.className = "reactions-container";
+    const emojiMap = {
+      "+1": "👍",
+      "-1": "👎",
+      "laugh": "😄",
+      "hooray": "🎉",
+      "confused": "😕",
+      "heart": "❤️",
+      "rocket": "🚀",
+      "eyes": "👀"
+    };
+
+    Object.entries(reactions).forEach(([key, count]) => {
+      if (count > 0 && emojiMap[key]) {
+        const reactionSpan = document.createElement("span");
+        reactionSpan.className = "reaction";
+        reactionSpan.innerHTML = `${emojiMap[key]} ${count}`;
+        reactionsElement.appendChild(reactionSpan);
+      }
+    });
+
+    return reactionsElement;
+  }
+
+  // Callback function to load comments
   const loadComments = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-
-        // main container
         const container = entry.target;
+        const loader = container.querySelector('.loader');
+
+        // Initially display the loader
+        loader.style.display = 'block';
+
         const postId = container.getAttribute('data-postId');
+
         fetch(`/.netlify/functions/comments?id=${postId}`)
           .then(response => response.json())
           .then(comments => {
             if (comments.data && comments.data.length > 0) {
-
+              loader.style.display = 'none';
               const btnContainer = document.createElement('div');
               btnContainer.className = 'btn-container';
 
-              // create an element to show the number of existing comments
+              // Display number of comments
               const numberOfComments = document.createElement('h3');
               numberOfComments.className = 'number-of-comments'
-              numberOfComments.innerText = comments.data.length + ' Comments';
+              numberOfComments.innerText = `${comments.data.length} Comments`;
 
-              // create a button to allow users to submit a comment in GitHub
+              // Link for commenting on GitHub
               const commentLink = document.createElement('a');
               commentLink.className = 'comment-btn';
               commentLink.innerText = 'Comment on GitHub';
@@ -124,13 +154,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
               btnContainer.appendChild(numberOfComments);
               btnContainer.appendChild(commentLink);
-
               container.appendChild(btnContainer);
 
+              // Display each comment
               comments.data.forEach(comment => {
                 const commentInfoContainer = document.createElement('div');
                 commentInfoContainer.className = 'info-container';
-                // grab the users avatar and name
+
+                // User's avatar and name
                 const userAvatar = document.createElement('img');
                 userAvatar.src = comment.user.avatarUrl;
                 userAvatar.className = 'user-avatar';
@@ -151,13 +182,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 const commentDiv = document.createElement('div');
-                const safeHTML = comment.body;
                 commentDiv.classList.add('comment');
-                commentDiv.innerHTML = safeHTML
-
-                // Reverse the direct child elements of the container
-                const children = Array.from(commentDiv.children);
-                children.reverse().forEach(child => commentDiv.appendChild(child));
+                commentDiv.innerHTML = comment.body;
 
                 commentInfoContainer.appendChild(userAvatar);
                 commentInfoContainer.appendChild(userName);
@@ -165,34 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 commentDiv.appendChild(commentInfoContainer);
                 container.appendChild(commentDiv);
 
+                // Add reactions to the comment if they exist
                 if (comment.reactions) {
-                  const emojiMap = {
-                    "+1": "👍",
-                    "-1": "👎",
-                    "laugh": "😄",
-                    "hooray": "🎉",
-                    "confused": "😕",
-                    "heart": "❤️",
-                    "rocket": "🚀",
-                    "eyes": "👀"
-                  };
-
-                  function createReactionsElement(reactions) {
-                    const reactionsElement = document.createElement("div");
-                    reactionsElement.className = "reactions-container";
-
-                    Object.entries(reactions).forEach(([key, count]) => {
-                      if (count > 0 && emojiMap[key]) { // Ensure we have a matching emoji for the key
-                        const reactionSpan = document.createElement("span");
-                        reactionSpan.className = "reaction";
-                        reactionSpan.innerHTML = `${emojiMap[key]} ${count}`;
-                        reactionsElement.appendChild(reactionSpan);
-                      }
-                    });
-
-                    return reactionsElement;
-                  }
-
                   const reactionsElem = createReactionsElement(comment.reactions);
                   if (reactionsElem.hasChildNodes()) {
                     commentDiv.appendChild(reactionsElem);
@@ -202,24 +202,27 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
               container.innerText = 'No comments yet. Be the first to comment!';
             }
-            // Stop observing once the comments are loaded
+
+            // Stop observing the container once the comments are loaded
             observer.unobserve(container);
           })
           .catch(error => {
             console.error("Failed fetching comments:", error);
+
+            loader.style.display = 'none';
           });
       }
     });
   };
 
-  // Setting up the IntersectionObserver
+  // Initialize IntersectionObserver
   const options = {
-    rootMargin: '0px',  // Adjust if you want to load earlier or later
-    threshold: 0.1  // Start fetching when 10% of the container is visible
+    rootMargin: '0px',
+    threshold: 0.1
   };
-
   const observer = new IntersectionObserver(loadComments, options);
 
-  // Observing all comments containers
+  // Start observing each comments container
   commentsContainers.forEach(container => observer.observe(container));
 });
+

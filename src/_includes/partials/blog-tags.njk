@@ -1,0 +1,12 @@
+<section class="region blog-tags pagination" role="banner">
+	<div class="wrapper blog-tags__inner">
+		<h2 class="text-center">{{ blog.tags }}</h2>
+		<ul>
+			{% for tag in collections.allTags | exclude('posts') %}
+				<li>
+					<a href="/blog/tag/{{ tag | slugify }}">{{ tag }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

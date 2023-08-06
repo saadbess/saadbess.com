@@ -1,0 +1,24 @@
+.blog-tags {
+	background-color: var(--color-secondary-glare);
+	width: 100%;
+
+	& .blog-tags__inner {
+
+		& h2 {
+			max-width: 100%;
+		}
+
+		& ul {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+			padding: 0;
+		}
+
+		& ul li {
+			list-style: none;
+			margin: var(--space-xs);
+		}
+	}
+}

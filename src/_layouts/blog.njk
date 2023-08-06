@@ -34,7 +34,7 @@ pagination:
     {% endfor %}
   </ul>
 
-  <div class="pagination">
+  <div class="pagination region">
     {% if pagination.href.previous %}
       <a href="{{ pagination.href.previous }}">Newer Posts</a>
     {% endif %}
@@ -44,3 +44,4 @@ pagination:
     {% endif %}
   </div>
 </article>
+{% include "partials/blog-tags.njk" %}

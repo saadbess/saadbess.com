@@ -11,13 +11,13 @@ layout: base
   {% include 'svg/divider-pixels.svg' %}
 </header>
 
-<article>
+<article class="region">
   <div class="wrapper flow prose">
     {{ content | safe }}
   </div>
 </article>
 
-<article class="region" style="--region-space-top: var(--space-s)">
+<article style="--region-space-top: var(--space-s)">
   <div class="wrapper flow prose">
     <h2>{{ blog.title }}</h2>
     <!-- blog intro text is optional. -->
@@ -44,3 +44,5 @@ layout: base
   </ul>
   {% include "partials/read-more-articles.njk" %}
 </article>
+
+{% include "partials/blog-tags.njk" %}

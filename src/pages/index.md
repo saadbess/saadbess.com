@@ -5,6 +5,7 @@ description: 'This blog artfully explores the intricacies of front-end web engin
 layout: 'home'
 blog:
   title: 'Latest from the blog'
+  tags: 'Entire blog tags'
   intro: ''
 ---
 

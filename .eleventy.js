@@ -112,6 +112,18 @@ module.exports = eleventyConfig => {
 
   // 	--------------------- Custom collections -----------------------
   eleventyConfig.addCollection('posts', getAllPosts);
+  // Add a collection called "blog" for all blog posts
+  eleventyConfig.addCollection("allTags", function (collection) {
+    let allTags = [];
+    getAllPosts(collection).forEach(item => {
+      if (item.data.tags) {
+        allTags = allTags.concat(item.data.tags);
+      }
+    });
+
+    // Deduplicate tags
+    return [...new Set(allTags)];
+  });
 
   // 	--------------------- Events ---------------------
   eleventyConfig.on('afterBuild', svgToJpeg);

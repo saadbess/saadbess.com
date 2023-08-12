@@ -12,9 +12,9 @@ tags:
   - technical
 ---
 
-Optional chaining in JavaScript enables you to read property values from within a chain of connected objects without checking if each reference in it is valid. The optional chaining operator "?." stops evaluation if any value before "?." is null or undefined.
+Optional chaining in JavaScript enables you to read property values from within a chain of connected objects without checking if each reference in it is valid. The optional chaining operator `?.` stops evaluation if any value before `?.` is `null` or `undefined`.
 
-The following examples demonstrate how TypeScript type checking can benefit our variables and interfaces by specifying their types. If any properties can be undefined, we specify this in their types; otherwise optional chaining remains unchanged from JavaScript.
+The following examples demonstrate how TypeScript type checking can benefit our variables and interfaces by specifying their types. If any properties can be `undefined`, we specify this in their types; otherwise optional chaining remains unchanged from JavaScript.
 
 ```typescript
 interface Property {

@@ -127,7 +127,7 @@ Optional chaining can greatly simplify your code by eliminating the need to chec
 
 Optional chaining can be an extremely useful feature, but there may be instances in which its use could produce unexpected outcomes or hide any underlying problems within your code. Here are a few scenarios when considering using optional chaining:
 
-### 1. When you need to know whether an object is missing a property or its value is `undefined`:
+### 1. When you need to know whether an object is missing a property or its value is `undefined`
 
 optional chaining will return `undefined` if it can't locate or can't detect said property or its value is `undefined` - making this method unsuitable when trying to distinguish between these two scenarios.
 
@@ -144,7 +144,7 @@ const obj = { prop: 0 };
 console.log(obj?.prop ?? 'default'); // 'default', but we might expect 0
 ```
 
-### 4. Overuse of optional chaining may result in silent failures:
+### 4. Overuse of optional chaining may result in silent failures
 
 Overusing optional chaining can result in silent failures that do not generate errors and make debugging more challenging, so one should use it cautiously and not abuse it just to avoid writing defensive code.
 

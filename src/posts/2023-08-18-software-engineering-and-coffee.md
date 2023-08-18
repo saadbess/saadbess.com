@@ -7,8 +7,8 @@ postId: 8
 tags:
   - musing
   - coffee
-  - non-technical
   - software engineering
+  - non-technical
 ---
 
 Software engineering can be likened to the journey of a coffee bean from its origin in lush fields to being enjoyed as a delicious cup on one's morning table. At first glance, both may appear mundane commodities in today's modern world; yet upon further inspection it becomes evident of all of the intricate processes, decisions, and craftsmanship involved with each product - just as coffee beans come from various places while software emerges from different minds and experiences.

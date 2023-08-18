@@ -1,5 +1,5 @@
 ---
-title: 'Software Engineering and Coffee: Far away from craftsmanship but close.'
+title: 'Software Engineering and Coffee: Far away from craftsmanship but close'
 description: "The art of coffee brewing and software engineering, at first glance, appear to be worlds apart, each weaving its own intricate patterns. Yet, when the essence is distilled, they converge in a dance of creativity, precision, and profound impact."
 date: 2023-08-18
 toc: false

@@ -189,4 +189,4 @@ The ["The Neuropsychology of Decision Making"](https://www.edx.org/learn/decisio
 
 ### Lectures
 
-**TED Talks on Decision-Making:** Experts in decision-making share insights and personal experiences. Notably, [Barry Schwartz](https://youtu.be/VO6XEQIsCoM?si=eHfrPzv-tMMsZwu7) discusses how excessive choices can lead to indecision and dissatisfaction.
+**TED Talks on Decision-Making:** Experts in decision-making share insights and personal experiences. Notably, ["The Paradox of Choice"](https://youtu.be/VO6XEQIsCoM?si=eHfrPzv-tMMsZwu7) by Barry Schwartz discusses how excessive choices can lead to indecision and dissatisfaction.

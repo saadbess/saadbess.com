@@ -41,6 +41,7 @@ const { svgToJpeg } = require('./config/events/index.js');
 
 // plugins
 const markdownLib = require('./config/plugins/markdown.js');
+const contentRecommendation = require("./config/plugins/contentRecommendation");
 const { EleventyRenderPlugin } = require('@11ty/eleventy');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const { slugifyString } = require('./config/utils');
@@ -143,6 +144,7 @@ module.exports = eleventyConfig => {
     components: '_includes/webc/*.webc'
   });
   eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addPlugin(contentRecommendation);
 
   // 	--------------------- Passthrough File Copy -----------------------
   // same path

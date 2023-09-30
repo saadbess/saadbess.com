@@ -3,7 +3,7 @@ title: 'Binary Choices: Exploring Decision-Making'
 description: "This article offers insights into the relationship between binary and complex decisions, drawing on cognitive science, history, and religious perspectives to improve decision-making capabilities."
 date: 2023-08-26
 toc: true
-postId: 8
+postId: 9
 tags:
   - binary
   - decision-making

@@ -42,6 +42,19 @@ preloads:
       <div class="loader"></div>
     </div>
 
+    {% if related %}
+      <aside>
+        <h2>You might also like:</h2>
+        <ul>
+          {% for relatedPost in related %}
+            <li>
+              <a href="{{ relatedPost.url }}">{{ relatedPost.data.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </aside>
+    {% endif %}
+
     <hr>
     <h3>Share this post</h3>
     <article>

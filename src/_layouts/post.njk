@@ -37,23 +37,24 @@ preloads:
 
     {% include "partials/coffee.njk" %}
 
-    <div class="flow comments-container" data-postId="{{ postId }}">
-      <!-- Comments will be loaded here -->
-      <div class="loader"></div>
-    </div>
-
     {% if related %}
+      <hr>
       <aside>
         <h2>You might also like:</h2>
-        <ul>
+        <ul class="grid mt-l-xl" role="list">
           {% for relatedPost in related %}
-            <li>
+            <li class="card flow overflow-hidden">
               <a href="{{ relatedPost.url }}">{{ relatedPost.data.title }}</a>
             </li>
           {% endfor %}
         </ul>
       </aside>
     {% endif %}
+
+    <div class="flow comments-container" data-postId="{{ postId }}">
+      <!-- Comments will be loaded here -->
+      <div class="loader"></div>
+    </div>
 
     <hr>
     <h3>Share this post</h3>

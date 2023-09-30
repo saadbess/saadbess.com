@@ -1,9 +1,8 @@
 ---
 title: 'Creating a Content Recommendation Plugin in 11ty'
 description: "This article offers insights into the relationship between binary and complex decisions, drawing on cognitive science, history, and religious perspectives to improve decision-making capabilities."
-date: 2023-10-01
+date: 2023-09-30
 toc: true
-draft: true
 postId: 10
 tags:
   - javascript
@@ -31,7 +30,7 @@ tags:
 
 ## Create the Plugin
 
-Create a seperate file `contentRecommendation.js` for the implmentation of the plugin. It's good practice to house plugins seperately as opposed to directly implement them within your `.eleventy.js` file. Personally, I have my plugins stored `./config/plugins`.
+Create a separate file, `contentRecommendation.js`, for the implementation of the plugin. It's good practice to house plugins separately, rather than implementing them directly within your `.eleventy.js` file. Personally, I store my plugins in `./config/plugins`.
 
 ```javascript
 module.exports = function (eleventyConfig) {
@@ -77,7 +76,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-Here, we're defining a module that exports a function. This function takes in a single argument, `eleventyConfig`, which is the configuration object for Eleventy. You use this object to tap into various Eleventy APIs, like adding collections, filters, and more.
+Here, we're defining a module that exports a function. This function accepts a single argument, `eleventyConfig`, representing Eleventy's configuration object. You can use this object to access various Eleventy APIs, such as adding collections, filters, and more.
 
 ### Add a collection
 
@@ -87,7 +86,7 @@ eleventyConfig.addCollection("relatedPosts", function(collection) {
 });
 ```
 
-We're using `addCollection` to define a new collection named "relatedPosts". Collections in Eleventy allow you to create groups of content. The callback function for `addCollection` provides a `collection` object, which contains various methods to access your content.
+We're using `addCollection` to define a new collection named "relatedPosts". In Eleventy, collections let you group pieces of content together. The callback function for `addCollection` supplies a `collection` object, which offers various methods to access your content.
 
 ### Filter out draft posts
 
@@ -100,10 +99,10 @@ return collection
 });
 ```
 
-Here, two primary operations are being performed on the collection:
+Here, two main operations are carried out on the collection:
 
-1. `collection.getAll()`: This fetches all items in the collection. Each item represents a piece of content, like a blog post.
-2. `filter(item => !item.data.draft)`: We're using the filter method to exclude items (or posts) that have the frontmatter property `draft` set to `true`. This ensures that drafts are not considered for recommendations.
+1. `collection.getAll()`: This retrieves all items from the collection, with each item representing a piece of content, such as a blog post.
+2. `filter(item => !item.data.draft)`: We utilise the `filter` method to exclude items (or posts) that have the frontmatter property `draft` set to `true`, ensuring that drafts aren't considered for recommendations.
 
 ```javascript
 ---
@@ -112,7 +111,7 @@ draft: true
 ---
 ```
 
-Using `map`, we're iterating over each post (excluding drafts). For each post, we'll find related content and return a modified post with the related content attached.
+Using `map`, we iterate over each post (excluding drafts). For each post, we identify related content and return an amended post with the associated content attached.
 
 ### Define an empty array for related posts
 
@@ -154,8 +153,8 @@ if (post.data.tags) {
 related = [...new Set(related)].slice(0, 2);
 ```
 
-1. `[...new Set(related)]`: This is a trick to remove duplicates from the array. By converting the array to a `Set` and then back to an array, any duplicates are automatically removed.
-2. `slice(0, 2)`: Limits the related posts array to the first 3 items. You can adjust the number as desired.
+1. `[...new Set(related)]`: To remove duplicates from an array, convert the array to a `Set` and back to an array. Any duplicates are automatically eliminated this way.
+2. `slice(0, 2)`: This limits related posts array to only 3 items at any one time - adjust as necessary!
 
 ### Attach related posts to the current post
 
@@ -171,11 +170,11 @@ We're adding the related posts to the `data` object of the current post under a 
 return post;
 ```
 
-Finally, we return the modified post (with its related content) from the `map` function. This becomes part of the new "relatedPosts" collection.
+Finally, we employ the `map` function to return our amended post (with its associated content) and incorporate it into the new "relatedPosts" collection.
 
 ## Integrate plugin
 
-Now that we have our plugin implemented, we want to integrate it within our 11ty site. Head over to your `.eleventy.js` config and add the plugin.
+Now that we've implemented our plugin, we aim to integrate it into our 11ty site. Navigate to your `.eleventy.js` configuration and incorporate the plugin.
 
 ```javascript
 const contentRecommendation = require("./config/plugins/contentRecommendation");
@@ -187,18 +186,18 @@ module.exports = function (eleventyConfig) {
 
 ## Display related posts in template files
 
-Now that we have our plugin integrated, we can render our related posts within our template files. In this example I'm using Nunjucks.
+Now that we've integrated our plugin, we can display the related posts within our template files. For this example, I'm utilising Nunjucks.
 
-Within my `_layouts/post.njk` template, at the end of all posts is where I want to render my related posts. 
+Within my `_layouts/post.njk` template, I wish to present the related posts at the conclusion of all posts.
 
 ```javascript
 {% raw %}
 {% if related %}
    <aside>
       <h2>You might also like:</h2>
-      <ul>
+      <ul class="grid mt-l-xl" role="list">
        {% for relatedPost in related %}
-         <li>
+         <li class="card flow overflow-hidden">
            <a href="{{ relatedPost.url }}">{{ relatedPost.data.title }}</a>
          </li>
        {% endfor %}
@@ -208,3 +207,6 @@ Within my `_layouts/post.njk` template, at the end of all posts is where I want 
 {% endraw %}
 ```
 
+Now if you scroll to the end of this post, you'll observe a section titled **"You might also like:"**. This allows readers to explore additional posts.
+
+Essentially, this plugin creates a collection named "relatedPosts", where each post includes an additional `related` property in its `data` object that holds an array of posts which share tags with its current post but do not overlap, thus eliminating duplicate posts and drafts.

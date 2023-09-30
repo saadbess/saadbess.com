@@ -1,6 +1,6 @@
 ---
 title: 'Creating a Content Recommendation Plugin in 11ty'
-description: "This article offers insights into the relationship between binary and complex decisions, drawing on cognitive science, history, and religious perspectives to improve decision-making capabilities."
+description: "In this tutorial we will create a plugin in 11ty that intelligently analyses the tags of your blog posts to suggest related articles to your readers."
 date: 2023-09-30
 toc: true
 postId: 10

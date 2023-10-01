@@ -39,10 +39,6 @@ const { getAllPosts } = require('./config/collections/index.js');
 // module import events
 const { svgToJpeg } = require('./config/events/index.js');
 
-// custom script for creating GitHub issues
-const fs = require('fs');
-const createGitHubIssue = require('./src/assets/scripts/createGitHubIssue');
-
 // plugins
 const markdownLib = require('./config/plugins/markdown.js');
 const contentRecommendation = require("./config/plugins/contentRecommendation");
@@ -149,29 +145,6 @@ module.exports = eleventyConfig => {
   });
   eleventyConfig.addPlugin(pluginTOC);
   eleventyConfig.addPlugin(contentRecommendation);
-
-  eleventyConfig.on('afterBuild', async () => {
-    const posts = eleventyConfig.collections.allPosts || [];;
-
-    // Read existing mappings
-    const issueMapPath = './src/_data/githubIssuesMap.json';
-    const existingMappings = JSON.parse(fs.readFileSync(issueMapPath, 'utf8'));
-
-    for (let post of posts) {
-      const postSlug = post.fileSlug; // Using the file slug to identify the post
-
-      // Check if this post already has an associated GitHub issue ID, either in the frontmatter or in the mapping file
-      if (!post.data.postId && !existingMappings[postSlug]) {
-        const issueNumber = await createGitHubIssue(post.data.title, post.url);
-
-        // Store the issue number in the mappings
-        existingMappings[postSlug] = issueNumber;
-      }
-    }
-
-    // Write the updated mappings back to the JSON file
-    fs.writeFileSync(issueMapPath, JSON.stringify(existingMappings, null, 2));
-  });
 
   // 	--------------------- Passthrough File Copy -----------------------
   // same path

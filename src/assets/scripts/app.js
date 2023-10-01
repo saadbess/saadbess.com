@@ -135,27 +135,30 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(`/.netlify/functions/comments?id=${postId}`)
           .then(response => response.json())
           .then(comments => {
+            loader.style.display = 'none';
+
+            // Create btnContainer irrespective of comments presence
+            const btnContainer = document.createElement('div');
+            btnContainer.className = 'btn-container';
+
+            // Display number of comments
+            const numberOfComments = document.createElement('h3');
+            numberOfComments.className = 'number-of-comments'
+            numberOfComments.innerText = `${comments.data && comments.data.length > 0 ? comments.data.length : 'No'} Comments`;
+
+            // Link for commenting on GitHub
+            const commentLink = document.createElement('a');
+            commentLink.className = 'comment-btn';
+            commentLink.innerText = 'Comment on GitHub';
+            commentLink.href = `https://github.com/saadbess/saadbess.com/issues/${postId}`;
+            commentLink.target = '_blank';
+
+            btnContainer.appendChild(numberOfComments);
+            btnContainer.appendChild(commentLink);
+            container.appendChild(btnContainer);
+
+            // Check for comments and display them
             if (comments.data && comments.data.length > 0) {
-              loader.style.display = 'none';
-              const btnContainer = document.createElement('div');
-              btnContainer.className = 'btn-container';
-
-              // Display number of comments
-              const numberOfComments = document.createElement('h3');
-              numberOfComments.className = 'number-of-comments'
-              numberOfComments.innerText = `${comments.data.length} Comments`;
-
-              // Link for commenting on GitHub
-              const commentLink = document.createElement('a');
-              commentLink.className = 'comment-btn';
-              commentLink.innerText = 'Comment on GitHub';
-              commentLink.href = `https://github.com/saadbess/saadbess.com/issues/${postId}`;
-              commentLink.target = '_blank';
-
-              btnContainer.appendChild(numberOfComments);
-              btnContainer.appendChild(commentLink);
-              container.appendChild(btnContainer);
-
               // Display each comment
               comments.data.forEach(comment => {
                 const commentInfoContainer = document.createElement('div');
@@ -168,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const userName = document.createElement('span');
                 userName.className = 'user-name';
-                userName.innerText = comment.user.name
+                userName.innerText = comment.user.name;
 
                 const date = document.createElement('time');
                 date.className = 'comment-time';
@@ -200,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
               });
             } else {
-              container.innerText = 'No comments yet. Be the first to comment!';
+              // We already display the 'No Comments' in the btnContainer, so no need to repeat here
             }
 
             // Stop observing the container once the comments are loaded
@@ -208,7 +211,6 @@ document.addEventListener("DOMContentLoaded", function () {
           })
           .catch(error => {
             console.error("Failed fetching comments:", error);
-
             loader.style.display = 'none';
           });
       }
@@ -225,4 +227,5 @@ document.addEventListener("DOMContentLoaded", function () {
   // Start observing each comments container
   commentsContainers.forEach(container => observer.observe(container));
 });
+
 

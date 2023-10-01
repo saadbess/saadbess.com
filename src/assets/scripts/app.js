@@ -137,20 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
           .then(comments => {
             if (comments.data && comments.data.length > 0) {
               loader.style.display = 'none';
-              const btnContainer = document.createElement('div');
-              btnContainer.className = 'btn-container';
-
-              // Display number of comments
-              const numberOfComments = document.createElement('h3');
-              numberOfComments.className = 'number-of-comments'
-              numberOfComments.innerText = `${comments.data.length} Comments`;
-
-              // Link for commenting on GitHub
-              const commentLink = document.createElement('a');
-              commentLink.className = 'comment-btn';
-              commentLink.innerText = 'Comment on GitHub';
-              commentLink.href = `https://github.com/saadbess/saadbess.com/issues/${postId}`;
-              commentLink.target = '_blank';
 
               // Display each comment
               comments.data.forEach(comment => {
@@ -196,6 +182,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
               });
             } else {
+              const btnContainer = document.createElement('div');
+              btnContainer.className = 'btn-container';
+
+              // Display number of comments
+              const numberOfComments = document.createElement('h3');
+              numberOfComments.className = 'number-of-comments'
+              numberOfComments.innerText = `${comments.data.length} Comments`;
+
+              // Link for commenting on GitHub
+              const commentLink = document.createElement('a');
+              commentLink.className = 'comment-btn';
+              commentLink.innerText = 'Comment on GitHub';
+              commentLink.href = `https://github.com/saadbess/saadbess.com/issues/${postId}`;
+              commentLink.target = '_blank';
+
               btnContainer.appendChild(numberOfComments);
               btnContainer.appendChild(commentLink);
               container.appendChild(btnContainer);

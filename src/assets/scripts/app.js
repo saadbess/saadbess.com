@@ -152,10 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
               commentLink.href = `https://github.com/saadbess/saadbess.com/issues/${postId}`;
               commentLink.target = '_blank';
 
-              btnContainer.appendChild(numberOfComments);
-              btnContainer.appendChild(commentLink);
-              container.appendChild(btnContainer);
-
               // Display each comment
               comments.data.forEach(comment => {
                 const commentInfoContainer = document.createElement('div');
@@ -200,6 +196,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
               });
             } else {
+              btnContainer.appendChild(numberOfComments);
+              btnContainer.appendChild(commentLink);
+              container.appendChild(btnContainer);
               container.innerText = 'No comments yet. Be the first to comment!';
             }
 

@@ -1,36 +1,41 @@
-const fs = require('fs');
-const path = require('path');
-const matter = require('gray-matter');
-const EleventyFetch = require('@11ty/eleventy-fetch');
+const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
+const matter = require("gray-matter");
 
-module.exports = async function () { // Notice the fetch parameter here
-	const postsDirectory = './src/posts';
-	const markdownFiles = fs.readdirSync(postsDirectory).filter(file => path.extname(file) === '.md');
+module.exports = async function () {
+	const postsDirectory = "./src/posts";
+
+	const markdownFiles = fs
+		.readdirSync(postsDirectory)
+		.filter((file) => path.extname(file) === ".md");
 
 	for (let file of markdownFiles) {
 		const filePath = path.join(postsDirectory, file);
-		const fileContent = fs.readFileSync(filePath, 'utf-8');
+		const fileContent = fs.readFileSync(filePath, "utf-8");
 		const frontmatter = matter(fileContent);
 
-		if (!frontmatter.data.issueNumber) {
+		// If postId is not in the frontmatter, it means the issue hasn't been created
+		if (!frontmatter.data.postId) {
 			try {
-				const response = await EleventyFetch('/.netlify/functions/createIssue', {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({
-						title: frontmatter.data.title,
-						description: frontmatter.data.description
-					})
+				const response = await axios.post("/.netlify/functions/createIssue", {
+					title: frontmatter.data.title,
+					description: frontmatter.data.description,
 				});
 
-				if (response.ok) {
-					const data = await response.json();
-					frontmatter.data.issueNumber = data.issueNumber;
+				if (response.status === 200) {
+					frontmatter.data.postId = response.data.postId;
 
-					const updatedContent = matter.stringify(frontmatter.content, frontmatter.data);
+					// Update the markdown file with the new postId
+					const updatedContent = matter.stringify(
+						frontmatter.content,
+						frontmatter.data,
+					);
 					fs.writeFileSync(filePath, updatedContent);
 				} else {
-					console.error(`Failed to create issue for post ${frontmatter.data.title}. Status: ${response.status}`);
+					console.error(
+						`Failed to create issue for post ${frontmatter.data.title}`,
+					);
 				}
 			} catch (error) {
 				console.error(`Error: ${error}`);
@@ -38,5 +43,5 @@ module.exports = async function () { // Notice the fetch parameter here
 		}
 	}
 
-	return {};
+	return {}; // This function doesn't need to return any data to 11ty templates
 };

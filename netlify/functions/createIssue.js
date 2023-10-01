@@ -1,7 +1,23 @@
 const axios = require("axios");
 
 exports.handler = async (event, context) => {
-	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
+	console.log("function is being called here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
 	if (event.httpMethod !== "POST") {
 		return { statusCode: 405, body: "Method Not Allowed" };
 	}

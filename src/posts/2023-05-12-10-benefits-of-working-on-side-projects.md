@@ -1,12 +1,15 @@
 ---
-title: '10 benefits of working on side projects'
-description: 'As engineers it’s important to work on side projects. There are more benefits to this than you might imagine. Here are 10 benefits:'
-date: 2023-05-12
+title: 10 benefits of working on side projects
+description: >-
+  As engineers it’s important to work on side projects. There are more benefits
+  to this than you might imagine. Here are 10 benefits:
+date: 2023-05-12T00:00:00.000Z
 tags:
   - learning
   - learning how to learn
   - engineer
   - non-technical
+postId: 25
 ---
 
 As engineers it’s important to work on side projects. There are more benefits to this than you might imagine. Here are 10 benefits:

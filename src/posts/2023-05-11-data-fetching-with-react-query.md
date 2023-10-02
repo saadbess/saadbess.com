@@ -1,7 +1,9 @@
 ---
-title: 'Data fetching with TanStack Query'
-description: 'A quick example on how to fetch data from an API using TanStack Query (previously React Query).'
-date: 2023-05-11
+title: Data fetching with TanStack Query
+description: >-
+  A quick example on how to fetch data from an API using TanStack Query
+  (previously React Query).
+date: 2023-05-11T00:00:00.000Z
 tags:
   - react
   - react query
@@ -9,6 +11,7 @@ tags:
   - javascript
   - data fetching
   - technical
+postId: 24
 ---
 
 In this example, we're using the `useQuery` hook from [TanStack Query](https://tanstack.com/query/v3/) (previously React Query) to fetch data from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/) based on the `userId` state. We're also using the `useState` hook to allow the user to change the `userId` and refetch the data.

@@ -1,11 +1,15 @@
 ---
-title: 'React Suspense'
-description: 'When you share your blog posts, a thumbnail image appears - the image we define as an Open Graph Image. This starter generates these images for your blog posts automatically.'
-date: 2023-03-22
+title: React Suspense
+description: >-
+  When you share your blog posts, a thumbnail image appears - the image we
+  define as an Open Graph Image. This starter generates these images for your
+  blog posts automatically.
+date: 2023-03-22T00:00:00.000Z
 draft: true
 tags:
   - react
   - javascript
+postId: 19
 ---
 
 When you share your blog posts, a thumbnail image may appear - the image we define in our meta data as an Open Graph Image (`og:image`).

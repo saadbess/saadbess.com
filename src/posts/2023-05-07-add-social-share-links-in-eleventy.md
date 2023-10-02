@@ -1,13 +1,16 @@
 ---
-title: 'Add social share links in Eleventy'
-description: 'Learn how to add social share links to your Eleventy blog posts using minimal configuration and Nunjucks templating.'
-date: 2023-05-07
+title: Add social share links in Eleventy
+description: >-
+  Learn how to add social share links to your Eleventy blog posts using minimal
+  configuration and Nunjucks templating.
+date: 2023-05-07T00:00:00.000Z
 draft: true
 tags:
   - eleventy
   - 11ty
   - nunjucks
   - social media
+postId: 23
 ---
 
 In this tutorial, you’re going to learn how to add social share links (like the ones at the bottom of this post) to your Eleventy blog posts. This feature is a simple touch, but robust for easily sharing blog posts to reach more potential readers.

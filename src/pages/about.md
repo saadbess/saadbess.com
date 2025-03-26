@@ -6,11 +6,13 @@ layout: page
 youtube: true
 ---
 
-Hi, I’m Saad—a front-end software engineer—from London, England. I have worked in the web industry for over a decade, and in that time, I have contributed to marketing agencies, startups and larger client-side organisations. To mention some: [eBay](https://www.ebay.com/), [Accenture](https://www.accenture.com/) (Accenture Interactive), [Feed Agency](https://feed.xyz/) (now DEPT®), [Fjord Agency](https://www.accenture.com/us-en/services/song/unlock-your-potential) (a part of Accenture Song), [Grassify](https://grassify.co.uk/), [Gumtree](https://www.gumtree.com/), [IAAF](https://worldathletics.org/) (World Athletics), [River Island](https://www.riverisland.com/), [StubHub](https://www.stubhub.com/), [The White Company](https://www.thewhitecompany.com/), [Virgin Active](https://www.virginactive.com/), [Wonderbly](https://www.wonderbly.com/) and [Zopa](https://www.zopa.com/).
+Hi, I’m Saad—a front-end software engineer from London. I’ve been working in the web industry for over a decade, contributing to everything from marketing agencies and startups to large client-side organisations.
 
-Throughout the years, I have navigated legacy ventures, pioneered greenfield initiatives, and shaped both expansive monolithic applications and succinct website constructs. My contributions span from solo endeavors to collaborative engagements within diverse multidisciplinary teams. With a foundational background in design, I relish my synergies with product aficionados, UX designers, and researchers. This positions me as a design engineer (kinda), infusing a profound technical nuance into our collective pursuits.
+{% include "partials/worked-with.njk" %}
 
-While my primary craft lies in the realm of front-end web development, I occasionally venture into back-end territories. I hold a fervent passion for the [Jamstack](https://jamstack.org/), site generators, accessibility, and performance metrics. I value an optimal developer experience, thus gravitating towards application architecture, build tooling, and particularly the nuances of monorepos.
+Over the years, I’ve worked on legacy projects, built greenfield applications from the ground up, and helped shape everything from large-scale monolithic systems to microfrontend architectures and lean, focused websites. I’ve contributed both as an individual developer and as part of diverse, multidisciplinary teams. With a background in design, I enjoy working closely with product specialists, UX designers, and researchers—bringing a technical edge to the creative process. This naturally places me in a design engineering role (more or less), blending both disciplines to create better digital experiences.
+
+While my primary focus is on the front-end, I occasionally explore back-end technologies, espeically during integration. I have a strong passion for accessibility, performance and testing. I’m also deeply invested in improving the developer experience, which draws me towards application architecture, build tooling, and the intricacies of monorepos. Lately, I’ve been exploring GSAP, Three.js, and Motion to create immersive web experiences.
 
 ## Teaching and mentoring
 
